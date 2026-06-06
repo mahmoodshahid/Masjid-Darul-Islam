@@ -31,124 +31,15 @@ import {
   Volume2
 } from 'lucide-react';
 
-// Seed (Default) Data for demonstration
+// Clean Empty Data for production start
 const DEFAULT_APP_DATA: AppData = {
-  members: [
-    {
-      id: "member_1",
-      name: "محمد عمر فاروق",
-      phone: "03001112222",
-      whatsapp: "03001112222",
-      address: "مکان نمبر 12، گلی نمبر 3، محلہ دارالسلام",
-      monthlyFee: 500,
-      joiningDate: "2026-03-01",
-      notes: "مسجد کمیٹی کے بزرگ ممبر",
-      status: "active",
-      billedMonths: ["2026-03", "2026-04", "2026-05"],
-      balance: 500, // will receive 2026-06 bill automatically on load
-      totalPaid: 1500,
-      totalDue: 2000
-    },
-    {
-      id: "member_2",
-      name: "حافظ محمد بلال",
-      phone: "03215556666",
-      whatsapp: "03215556666",
-      address: "فلیٹ نمبر بی-4، القمر ہائٹس، دارالسلام",
-      monthlyFee: 300,
-      joiningDate: "2026-04-01",
-      notes: "امام صاحب کے معاون",
-      status: "active",
-      billedMonths: ["2026-04", "2026-05"],
-      balance: 300,
-      totalPaid: 600,
-      totalDue: 900
-    },
-    {
-      id: "member_3",
-      name: "عبدالرحمن شاکر",
-      phone: "03337778888",
-      whatsapp: "03337778888",
-      address: "گھر نمبر 144، فیز 1، شاہ فیصل ٹاؤن",
-      monthlyFee: 1000,
-      joiningDate: "2026-05-15",
-      notes: "باقاعدگی سے ادائیگی کرنے والے ممبر",
-      status: "active",
-      billedMonths: ["2026-05"],
-      balance: 0,
-      totalPaid: 2000,
-      totalDue: 2000
-    }
-  ],
-  payments: [
-    {
-      id: "pay_1",
-      memberId: "member_1",
-      memberName: "محمد عمر فاروق",
-      amount: 1000,
-      date: "2026-04-05",
-      notes: "مارچ اور اپریل کا فنڈ"
-    },
-    {
-      id: "pay_2",
-      memberId: "member_1",
-      memberName: "محمد عمر فاروق",
-      amount: 500,
-      date: "202026-05-10",
-      notes: "مئی کا فنڈ"
-    },
-    {
-      id: "pay_3",
-      memberId: "member_2",
-      memberName: "حافظ محمد بلال",
-      amount: 600,
-      date: "2026-05-02",
-      notes: "اپریل اور مئی متبادل فنڈ"
-    },
-    {
-      id: "pay_4",
-      memberId: "member_3",
-      memberName: "عبدالرحمن شاکر",
-      amount: 1000,
-      date: "2026-05-20",
-      notes: "مئی فنڈ وصولی"
-    },
-    {
-      id: "pay_5",
-      memberId: "member_3",
-      memberName: "عبدالرحمن شاکر",
-      amount: 1000,
-      date: "2026-06-02",
-      notes: "جون کا پیشگی فنڈ"
-    }
-  ],
-  expenses: [
-    {
-      id: "exp_1",
-      date: "2026-05-05",
-      category: "بجلی بل",
-      description: "مسجد مین ہال مئی بجلی بل ادئیگی",
-      amount: 4500
-    },
-    {
-      id: "exp_2",
-      date: "2026-05-25",
-      category: "صفائی",
-      description: "مسجد صفائی ستھرائی عطر فینائل خریداری",
-      amount: 1200
-    },
-    {
-      id: "exp_3",
-      date: "2026-06-01",
-      category: "امام صاحب وظیفہ",
-      description: "امام صاحب کا ماہانہ وظیفہ برائے مئی",
-      amount: 15000
-    }
-  ],
+  members: [],
+  payments: [],
+  expenses: [],
   lastAutoBillCheck: ""
 };
 
-const LS_KEY = "darussalam_masjid_data_v1";
+const LS_KEY = "darussalam_masjid_data_v2";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');

@@ -47,11 +47,11 @@ export default function Reports({
       case 'daily':
         return payments.filter(p => p.date === selectedDate);
       case 'monthly':
-        return payments.filter(p => p.date.substring(0, 7) === selectedMonth);
+        return payments.filter(p => (p.date || '').substring(0, 7) === selectedMonth);
       case 'yearly':
-        return payments.filter(p => p.date.substring(0, 4) === selectedYear);
+        return payments.filter(p => (p.date || '').substring(0, 4) === selectedYear);
       case 'income_expense':
-        return payments.filter(p => p.date.substring(0, 4) === selectedYear);
+        return payments.filter(p => (p.date || '').substring(0, 4) === selectedYear);
       default:
         return [];
     }
@@ -62,13 +62,13 @@ export default function Reports({
       case 'daily':
         return expenses.filter(e => e.date === selectedDate);
       case 'monthly':
-        return expenses.filter(e => e.date.substring(0, 7) === selectedMonth);
+        return expenses.filter(e => (e.date || '').substring(0, 7) === selectedMonth);
       case 'yearly':
-        return expenses.filter(e => e.date.substring(0, 4) === selectedYear);
+        return expenses.filter(e => (e.date || '').substring(0, 4) === selectedYear);
       case 'expenses':
-        return expenses.filter(e => e.date.substring(0, 7) === selectedMonth);
+        return expenses.filter(e => (e.date || '').substring(0, 7) === selectedMonth);
       case 'income_expense':
-        return expenses.filter(e => e.date.substring(0, 4) === selectedYear);
+        return expenses.filter(e => (e.date || '').substring(0, 4) === selectedYear);
       default:
         return [];
     }

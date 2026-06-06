@@ -37,12 +37,12 @@ export default function Dashboard({ members, payments, expenses, onNavigate }: D
   const currentYearMonth = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}`; // e.g., "2026-06"
   
   // This Month Total Fund Billed
-  const thisMonthMembers = activeMembers.filter(m => m.joiningDate.substring(0, 7) <= currentYearMonth);
-  const thisMonthExpectedFund = thisMonthMembers.reduce((sum, m) => sum + m.monthlyFee, 0);
+  const thisMonthMembers = activeMembers.filter(m => (m.joiningDate || '').substring(0, 7) <= currentYearMonth);
+  const thisMonthExpectedFund = thisMonthMembers.reduce((sum, m) => sum + (m.monthlyFee || 0), 0);
   
   // Received current month payments
   const thisMonthCollectedFund = payments
-    .filter(p => p.date.substring(0, 7) === currentYearMonth)
+    .filter(p => (p.date || '').substring(0, 7) === currentYearMonth)
     .reduce((sum, p) => sum + p.amount, 0);
 
   // Remaining list
@@ -67,6 +67,7 @@ export default function Dashboard({ members, payments, expenses, onNavigate }: D
   };
 
   const getUrduMonthName = (yearMonth: string) => {
+    if (!yearMonth || yearMonth.length < 7) return yearMonth || '';
     const m = yearMonth.substring(5, 7);
     const y = yearMonth.substring(2, 4);
     return `${indexToUrduMonth[m] || m} ${y}`;
@@ -74,10 +75,10 @@ export default function Dashboard({ members, payments, expenses, onNavigate }: D
 
   const chartData = monthsList.map(month => {
     const income = payments
-      .filter(p => p.date.substring(0, 7) === month)
+      .filter(p => (p.date || '').substring(0, 7) === month)
       .reduce((sum, p) => sum + p.amount, 0);
     const expense = expenses
-      .filter(e => e.date.substring(0, 7) === month)
+      .filter(e => (e.date || '').substring(0, 7) === month)
       .reduce((sum, e) => sum + e.amount, 0);
     return {
       monthLabel: getUrduMonthName(month),

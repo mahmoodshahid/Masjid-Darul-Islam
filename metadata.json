@@ -1,0 +1,6 @@
+{
+  "name": "مسجد دارالسلام فنڈ مینجمنٹ",
+  "description": "مسجد دارالسلام فنڈ مینجمنٹ سسٹم - ممبران، فنڈ وصولی، بقایا جات، واٹس ایپ اطلاعات، اخراجات اور تفصیلی رپورٹس کے لیے ایک جدید اردو سپا ویب ایپ۔",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

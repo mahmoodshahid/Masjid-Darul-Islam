@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Cairo", "Noto Naskh Arabic", system-ui, -apple-system, sans-serif;
+  --color-masjid-green: #006633;
+  --color-masjid-light: #e8f5e9;
+  --color-accent-gold: #d4af37;
+  --color-theme-bg: #f4f7f6;
+  --color-slate-850: #1e293b;
+  --color-emerald-950: #002613;
+  --color-emerald-900: #004020;
+  --color-emerald-850: #006633;
+  --color-emerald-800: #005c2e;
+  --color-emerald-700: #006633;
+  --color-emerald-600: #00733a;
+  --color-emerald-500: #10b981;
+  --color-emerald-400: #34d399;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-100: #e8f5e9;
+  --color-emerald-50: #f4fcf6;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-theme-bg);
+}
+
+/* Customized thin modern scrollbar for RTL arrays */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}

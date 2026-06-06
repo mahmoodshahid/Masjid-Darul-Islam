@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { Member, Payment, Expense, ExpenseCategory } from '../types';
+import MosqueLogo from './MosqueLogo';
 import { Printer, FileSpreadsheet, Calendar, Search, Filter, TrendingUp, TrendingDown, RefreshCw } from 'lucide-react';
 import { exportToCSV } from '../utils/export';
 
@@ -303,10 +304,15 @@ export default function Reports({
       <div id="print-report-container" className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-6">
         
         {/* Printable Report Header */}
-        <div className="text-center space-y-1 pb-4 border-b-2 border-slate-200">
-          <h3 className="text-2xl font-bold text-slate-800 font-sans tracking-tight">مسجد دارالسلام فنڈ و اخراجات رپوٹ</h3>
-          <p className="text-xs text-slate-500">{getFilterDescription()}</p>
-          <p className="text-[10px] text-slate-400 font-mono no-print">رپورٹ بننے کی تاریخ: {currentDateStr}</p>
+        <div className="flex flex-col items-center text-center space-y-2.5 pb-4 border-b-2 border-slate-205">
+          <div className="w-16 h-16 bg-white rounded-full p-0.5 border border-slate-200 flex items-center justify-center shadow-xs">
+            <MosqueLogo className="w-14 h-14" />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-slate-800 font-sans tracking-tight">مسجد دارالسلام فنڈ و اخراجات رپوٹ</h3>
+            <p className="text-xs text-slate-500 mt-0.5">{getFilterDescription()}</p>
+            <p className="text-[10px] text-slate-400 font-mono no-print mt-0.5">رپورٹ بننے کی تاریخ: {currentDateStr}</p>
+          </div>
         </div>
 
         {/* Content Render Switch */}

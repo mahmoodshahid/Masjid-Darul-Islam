@@ -5,6 +5,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Member, Payment } from '../types';
+import MosqueLogo from './MosqueLogo';
 import { 
   Check, 
   Search, 
@@ -292,7 +293,10 @@ export default function FundCollection({
               <div className="absolute bottom-0 left-0 w-20 h-20 border-l-4 border-b-4 border-emerald-800/15"></div>
               
               {/* Receipt Header Text */}
-              <div className="text-center space-y-1">
+              <div className="text-center space-y-1 flex flex-col items-center">
+                <div className="w-16 h-16 bg-white rounded-full p-0.5 border border-emerald-800/20 flex items-center justify-center shadow-sm mb-1.5">
+                  <MosqueLogo className="w-14 h-14" />
+                </div>
                 <span className="text-xs font-bold text-emerald-800 block uppercase tracking-wider">الْمَسْجِد دَارُ السَّلَام</span>
                 <h4 className="text-xl font-extrabold text-slate-800 tracking-tight">مسجد دارالسلام فنڈ رسید</h4>
                 <p className="text-[10px] text-slate-500 font-mono">رسید نمبر: {activeReceipt.receiptNo}</p>

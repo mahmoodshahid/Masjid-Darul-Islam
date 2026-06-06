@@ -10,6 +10,7 @@ import { runAutoBilling } from './utils/billing';
 // Components
 import Dashboard from './components/Dashboard';
 import MemberManagement from './components/MemberManagement';
+import MosqueLogo from './components/MosqueLogo';
 import FundCollection from './components/FundCollection';
 import Defaulters from './components/Defaulters';
 import Expenses from './components/Expenses';
@@ -211,10 +212,10 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 flex flex-col md:flex-row text-right font-sans antialiased" dir="rtl">
       
       {/* Mobile Header Bar */}
-      <div className="md:hidden bg-emerald-850 text-white px-4 py-3.5 flex items-center justify-between shadow-md z-40 no-print">
-        <div className="flex items-center gap-2">
-          <div className="p-1.5 bg-emerald-800 rounded-lg">
-            <Sparkles className="text-amber-400 fill-amber-400" size={18} />
+      <div className="md:hidden bg-emerald-850 text-white px-4 py-3 min-h-[56px] flex items-center justify-between shadow-md z-40 no-print">
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 bg-white rounded-full overflow-hidden shadow-inner flex items-center justify-center shrink-0">
+            <MosqueLogo className="w-8 h-8" />
           </div>
           <span className="font-bold text-sm tracking-tight">مسجد دارالسلام فنڈز</span>
         </div>
@@ -237,8 +238,8 @@ export default function App() {
         {/* Brand Header */}
         <div>
           <div className="p-4 border-b border-emerald-900 flex items-center gap-3 bg-emerald-950/40">
-            <div className="p-1.5 bg-emerald-800 rounded-lg text-white shadow-md">
-              <Sparkles className="text-accent-gold fill-accent-gold" size={16} />
+            <div className="w-10 h-10 bg-white rounded-full overflow-hidden shadow-md flex items-center justify-center shrink-0">
+              <MosqueLogo className="w-9 h-9" />
             </div>
             <div>
               <span className="font-bold text-xs text-white tracking-tight block">مسجد دارالسلام</span>
